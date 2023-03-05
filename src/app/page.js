@@ -29,8 +29,8 @@ export default function Homepage() {
   return (
     <>
       <Head title={"ShakeShake BAR | Homepage"} />
-      <main>
-        <p className={scss.main}>hello world </p>
+      <main className={scss.main}>
+        <p>hello world </p>
         <p>
           lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
           lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem
