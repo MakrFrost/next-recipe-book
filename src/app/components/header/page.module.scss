@@ -20,28 +20,46 @@
     padding: 10px;
     color: rgb(238, 238, 238);
     background-color: #000000b6;
-    -webkit-animation: slowly 30s infinite;
-    animation: slowly 30s infinite;
+
+    border: solid 2px #fff;
+    border-radius: 10px;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px #ff0000,
+      0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 20px #ff0000;
+    box-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 4px #ff0000, 0 0 12px #ff0000,
+      0 0 16px #ff0000, inset 0 0 20px #ff0000;
+    animation: flicker 5.5s infinite alternate;
+    transition: all 250ms linear;
+
     &:hover {
+      font-weight: bold;
+      animation: flicker 0.5s infinite alternate;
     }
     &:active {
+      transform: scale(0.95);
     }
   }
 }
 
 .active {
   position: relative;
-  text-shadow: 2px 2px 3px rgb(0, 0, 0);
   font-weight: bold;
   padding: 10px;
-  color: rgb(255, 255, 255);
-  background-color: #ffffff94;
+  color: rgba(255, 255, 255, 0.699);
+  background-color: #36363694;
+
+  border: solid 2px #fff;
+  border-radius: 10px;
+
+  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px #00ff22,
+    0 0 20px #00ff22, 0 0 30px #00ff22, 0 0 40px #00ff22, 0 0 20px #00ff22;
+  box-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 4px #00ff22, 0 0 12px #00ff22,
+    0 0 16px #00ff22, inset 0 0 20px #00ff22;
+
   & .icon {
-    fill: #ff0000;
+    fill: #15ff00;
   }
   &:hover {
-  }
-  &:active {
+    font-weight: bold;
   }
 }
 .icon {
@@ -79,7 +97,7 @@
     &_block {
       padding-top: 20px;
       padding-bottom: 20px;
-      font-size: 18px;
+      font-size: 22px;
     }
     &_link {
       padding: 20px;
@@ -89,18 +107,26 @@
     padding: 20px;
   }
   .icon {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
   }
 }
 
-@-webkit-keyframes slowly {
-  50% {
-    box-shadow: rgba(255, 255, 255, 0.719) 0px 7px 29px 0px;
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 8px #fff, 0 0 15px #ff0000,
+      0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 70px #ff0000, 0 0 100px #ff0000;
   }
-}
-@keyframes slowly {
-  50% {
-    box-shadow: rgba(255, 255, 255, 0.726) 0px 7px 29px 0px;
+  20%,
+  24%,
+  55% {
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px #ff0000,
+      0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 55px #ff0000, 0 0 80px #ff0000;
   }
 }
