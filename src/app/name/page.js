@@ -4,7 +4,7 @@ import scss from "./page.module.scss";
 export default function NameCocktail({}) {
   return (
     <>
-      <Head title={"Shake-Shake BAR | Cocktail Name"} />
+      <Head title={"ShakeShake BAR | Cocktail Name"} />
       <main className={scss.main}>
         <div>Cocktail Name</div>
         <p>

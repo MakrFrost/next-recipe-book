@@ -2,6 +2,8 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import scss from "./page.module.scss";
+import { FaHome, FaCocktail } from "react-icons/fa";
+import { BiDrink } from "react-icons/bi";
 
 export default function Header() {
   const currentRoute = usePathname();
@@ -13,6 +15,7 @@ export default function Header() {
         href={"./"}
       >
         Homepage
+        <FaHome className={scss.icon} />
       </Link>
       <Link
         className={
@@ -21,12 +24,14 @@ export default function Header() {
         href={"./ingridients"}
       >
         Ingridients
+        <FaCocktail className={scss.icon} />
       </Link>
       <Link
         className={currentRoute === "/name" ? scss.active : scss.nav_link}
         href={"./name"}
       >
         Name
+        <BiDrink className={scss.icon} />
       </Link>
     </nav>
   );

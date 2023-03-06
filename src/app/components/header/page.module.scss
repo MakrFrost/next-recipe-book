@@ -16,10 +16,12 @@
     background-color: #000000dc;
   }
   &_link {
+    position: relative;
     padding: 10px;
     color: rgb(238, 238, 238);
     background-color: #000000b6;
-
+    -webkit-animation: slowly 30s infinite;
+    animation: slowly 30s infinite;
     &:hover {
     }
     &:active {
@@ -28,15 +30,29 @@
 }
 
 .active {
-  text-shadow: 1px 1px 3px black;
+  position: relative;
+  text-shadow: 2px 2px 3px rgb(0, 0, 0);
   font-weight: bold;
   padding: 10px;
   color: rgb(255, 255, 255);
   background-color: #ffffff94;
+  & .icon {
+    fill: #ff0000;
+  }
   &:hover {
   }
   &:active {
   }
+}
+.icon {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  fill: #ff000000;
+  z-index: -999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (min-width: 768px) {
@@ -49,6 +65,13 @@
     &_link {
       padding: 15;
     }
+  }
+  .active {
+    padding: 15px;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -64,5 +87,20 @@
   }
   .active {
     padding: 20px;
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@-webkit-keyframes slowly {
+  50% {
+    box-shadow: rgba(255, 255, 255, 0.719) 0px 7px 29px 0px;
+  }
+}
+@keyframes slowly {
+  50% {
+    box-shadow: rgba(255, 255, 255, 0.726) 0px 7px 29px 0px;
   }
 }
