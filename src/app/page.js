@@ -3,21 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+import Head from "./head";
 import scss from "./page.module.scss";
-
-export const metadata = {
-  title: "ShakeShake BAR | Homepage",
-  description: "Find you favourite cocktail!",
-  icons: {
-    icon: [
-      {
-        rel: "shortcut icon",
-        type: "image/x-icon",
-        url: "https://fav-gen.com/public/assets/img/emoji/svg/1f378.svg",
-      },
-    ],
-  },
-};
 
 async function getRandomCocktail() {
   try {
@@ -38,7 +25,7 @@ export default function Homepage() {
 
   return (
     <>
-      {/* <Head title={"ShakeShake BAR | Homepage"} /> */}
+      <Head title="ShakeShake BAR | Homepage" />
       <main className={scss.main}>
         <div className={scss.main_block}>
           <h1 className={scss.main_title}>Welcome to ShakeShake BAR!</h1>
