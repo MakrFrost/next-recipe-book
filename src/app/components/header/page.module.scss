@@ -81,7 +81,8 @@
       font-size: 16px;
     }
     &_link {
-      padding: 15;
+      display: flex;
+      align-items: center;
     }
   }
   .active {
