@@ -1,5 +1,5 @@
 "use client";
-// import Image from 'next/image'
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -37,14 +37,12 @@ export default function Homepage() {
           <h2 className={scss.main_second}>
             OK, if you are ready, lets try to find you favourite cocktail!
           </h2>
-          <Link className={scss.main_link} href={"./ingridients"}>
-            by Ingridients
-          </Link>
-          <Link className={scss.main_link} href={"./name"}>
-            by Name
-          </Link>
+          <div className={scss.main_link}>
+            <Link href={"./ingridients"}>by Ingridients</Link>
+            <Link href={"./name"}>by Name</Link>
+          </div>
           <h3 className={scss.main_random}>
-            Or try selecting a random cocktail
+            Or try selecting a random cocktail:
           </h3>
           <button
             className={scss.main_btn}
@@ -60,8 +58,18 @@ export default function Homepage() {
           </button>
         </div>
 
-        {random ? <h1>{random.strDrink}</h1> : null}
-        {/* {console.log(random.strDrink)} */}
+        {random ? (
+          <div>
+            <Image
+              src={random.strDrinkThumb}
+              width={400}
+              height={400}
+              alt={random.strDrink}
+            />
+            <h1>{random.strDrink}</h1>
+          </div>
+        ) : null}
+        {console.log(random.strDrink)}
       </main>
     </>
   );

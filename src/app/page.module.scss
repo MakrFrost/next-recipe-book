@@ -7,15 +7,48 @@
     text-align: center;
   }
   &_title {
+    margin-bottom: 40px;
   }
   &_dscr {
+    margin-bottom: 30px;
   }
   &_second {
+    margin-bottom: 30px;
   }
   &_link {
+    margin-bottom: 40px;
   }
   &_random {
+    margin-bottom: 15px;
   }
   &_btn {
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 15px;
+    font-size: 18px;
+    color: #000000;
+    background-color: transparent;
+    border: solid 2px #fff;
+    border-radius: 10px;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px #00ff22,
+      0 0 20px #00ff22, 0 0 30px #00ff22, 0 0 40px #00ff22, 0 0 20px #00ff22;
+    box-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 4px #00ff22, 0 0 12px #00ff22,
+      0 0 16px #00ff22, inset 0 0 20px #00ff22;
+    transition: all 250ms linear;
+
+    &:hover {
+      text-shadow: 0 0 1px #ffffffa8, 0 0 2px #ffffffa8, 0 0 5px #ffffffa8,
+        0 0 11px #00ff2294, 0 0 20px #00ff2294, 0 0 30px #00ff2294,
+        0 0 40px #00ff2294, 0 0 20px #00ff2294;
+      box-shadow: 0 0 1px #ffffffa8, 0 0 3px #ffffffa8, 0 0 4px #00ff2294,
+        0 0 12px #00ff2294, 0 0 16px #00ff2294, inset 0 0 20px #00ff2294;
+    }
+    &:active {
+      text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px #ff0000,
+        0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 20px #ff0000;
+      box-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 4px #ff0000, 0 0 12px #ff0000,
+        0 0 16px #ff0000, inset 0 0 20px #ff0000;
+      transform: scale(0.95);
+    }
   }
 }
