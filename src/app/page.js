@@ -19,9 +19,7 @@ async function getRandomCocktail() {
 }
 
 export default function Homepage() {
-  // const [allCocktails, setAllCocktails] = useState([]);
   const [random, setRandom] = useState([]);
-  // const [load, setLoad] = useState(false);
 
   return (
     <>
@@ -38,10 +36,18 @@ export default function Homepage() {
             OK, if you are ready, lets try to find you favourite cocktail!
           </h2>
           <div className={scss.main_links}>
-            <Link className={scss.main_link} href={"./ingridients"}>
+            <Link
+              className={scss.main_link}
+              href={"./ingridients"}
+              title="Get random cocktail!"
+            >
               by Ingridients
             </Link>
-            <Link className={scss.main_link} href={"./name"}>
+            <Link
+              className={scss.main_link}
+              href={"./name"}
+              title="Get random cocktail!"
+            >
               by Name
             </Link>
           </div>
@@ -58,8 +64,6 @@ export default function Homepage() {
           >
             Random cocktail
           </button>
-
-          {console.log(random)}
           {random ? <Cocktail cocktail={random} /> : null}
         </div>
       </main>
