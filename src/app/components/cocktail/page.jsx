@@ -4,7 +4,7 @@ import scss from "./page.module.scss";
 export default function Cocktail({ cocktail }) {
   return (
     <>
-      {cocktail ? (
+      {cocktail.strDrinkThumb ? (
         <div className={scss.main_name}>
           <div className={scss.main_wrap}>
             {cocktail.strDrinkThumb ? (
@@ -19,12 +19,15 @@ export default function Cocktail({ cocktail }) {
               />
             ) : (
               <Image
+                priority
+                fill
                 src={
                   "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
                 }
-                width={400}
-                height={400}
-                alt={cocktail.strDrink}
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1000px) 50vw,
+              33vw"
+                alt={"no img"}
               />
             )}
           </div>
