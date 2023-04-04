@@ -6,20 +6,20 @@ import Head from "./head";
 import Cocktail from "./components/cocktail/page";
 import scss from "./page.module.scss";
 
-async function getRandomCocktail() {
-  try {
-    const res = await fetch(
-      "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-    );
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.log(`error ${err}`);
-  }
-}
-
 export default function Homepage() {
   const [random, setRandom] = useState([]);
+
+  async function getRandomCocktail() {
+    try {
+      const res = await fetch(
+        "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+      );
+      const data = await res.json();
+      return data;
+    } catch (err) {
+      console.log(`error ${err}`);
+    }
+  }
 
   return (
     <>
@@ -54,6 +54,7 @@ export default function Homepage() {
           <h3 className={scss.main_random}>
             Or try selecting a random cocktail:
           </h3>
+
           <button
             className={scss.main_btn}
             onClick={() => {
@@ -64,6 +65,7 @@ export default function Homepage() {
           >
             Random cocktail
           </button>
+
           {random ? <Cocktail cocktail={random} /> : null}
         </div>
       </main>

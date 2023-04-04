@@ -4,7 +4,7 @@ import scss from "./page.module.scss";
 export default function Cocktail({ cocktail }) {
   return (
     <>
-      {cocktail.strDrinkThumb ? (
+      {cocktail ? (
         <div className={scss.main_name}>
           <div className={scss.main_wrap}>
             {cocktail.strDrinkThumb ? (
