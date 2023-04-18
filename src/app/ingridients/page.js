@@ -17,7 +17,7 @@ async function getCocktailByIngridient(ingridient) {
 }
 
 export default function Ingridient() {
-  const [cocktail, setCocktail] = useState([]);
+  const [cocktails, setCocktails] = useState([]);
 
   return (
     <>
@@ -28,18 +28,46 @@ export default function Ingridient() {
           cocktail, or enter the ingredients and find the cocktail you need,
           right now!
         </h2>
-
         <button
           onClick={() => {
             getCocktailByIngridient("Vodka")
-              .then((data) => setCocktail(...data.drinks))
+              .then((data) => setCocktails(data.drinks))
               .catch((error) => console.error(error));
           }}
         >
           Vodka
         </button>
+        {/* setCocktails([]); */}
+        <button
+          onClick={() => {
+            getCocktailByIngridient("Lemon")
+              .then((data) => setCocktails(data.drinks))
+              .catch((error) => console.error(error));
+          }}
+        >
+          Lemon
+        </button>
+        <button
+          onClick={() => {
+            getCocktailByIngridient("Rum")
+              .then((data) => setCocktails(data.drinks))
+              .catch((error) => console.error(error));
+          }}
+        >
+          Rum
+        </button>
 
-        {console.log(cocktail)}
+        {console.log(cocktails)}
+
+        {cocktails ? (
+          <ul>
+            {cocktails.map((cocktail) => {
+              return <li key={cocktail.idDrink}>{cocktail.strDrink}</li>;
+            })}
+          </ul>
+        ) : (
+          <>Try again!</>
+        )}
       </main>
     </>
   );
