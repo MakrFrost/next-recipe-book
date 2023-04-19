@@ -57,8 +57,6 @@ export default function Ingridient() {
           Rum
         </button>
 
-        {console.log(cocktails)}
-
         {cocktails ? (
           <ul>
             {cocktails.map((cocktail) => {
